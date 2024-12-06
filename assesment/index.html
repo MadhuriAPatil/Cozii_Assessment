@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars Visit Application</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background">
+    <h1>Mars Visit Application Form</h1>
+    <form id="applicationForm">
+      <!-- Stage 1 -->
+      <div id="stage1" class="stage active">
+        <h2>Personal Information</h2>
+        <label>Full Name: <input type="text" name="fullName" required></label><br>
+        <label>Date of Birth: <input type="date" name="dob" required></label><br>
+        <label>Nationality: <input type="text" name="nationality" required></label><br>
+        <label>Email: <input type="email" name="email" required></label><br>
+        <label>Phone: <input type="tel" name="phone" required></label><br>
+        <button type="button" onclick="nextStage(2)">Next</button>
+      </div>
+
+      <!-- Stage 2 -->
+      <div id="stage2" class="stage">
+        <h2>Travel Preferences</h2>
+        <label>Departure Date: <input type="date" name="departure" required></label><br>
+        <label>Return Date: <input type="date" name="return" required></label><br>
+        <fieldset>
+          <legend>Accommodation Preference:</legend>
+          <label><input type="radio" name="accommodation" value="Space Hotel" required> Space Hotel</label>
+          <label><input type="radio" name="accommodation" value="Martian Base"> Martian Base</label>
+        </fieldset>
+        <label>Special Requests: <textarea name="requests"></textarea></label><br>
+        <button type="button" onclick="prevStage(1)">Back</button>
+        <button type="button" onclick="nextStage(3)">Next</button>
+      </div>
+
+      <!-- Stage 3 -->
+      <div id="stage3" class="stage">
+        <h2>Health and Safety</h2>
+        <fieldset>
+          <legend>Health Declaration:</legend>
+          <label><input type="radio" name="health" value="Yes" required> Yes</label>
+          <label><input type="radio" name="health" value="No"> No</label>
+        </fieldset>
+        <label>Emergency Contact: <input type="tel" name="emergencyContact" required></label><br>
+        <label>Medical Conditions: <textarea name="medical"></textarea></label><br>
+        <button type="button" onclick="prevStage(2)">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
